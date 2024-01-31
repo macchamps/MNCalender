@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MNCalender: View {
+public struct MNCalender: View {
     public var onChangeDate: ((_ date: Date) -> Void)?
     
     @EnvironmentObject var weekStore: WeekStore
@@ -15,7 +15,7 @@ struct MNCalender: View {
     private var theme: ThemeColor = ThemeColor()
     private var isShowHeader:Bool = true
     
-    var body: some View {
+    public var body: some View {
         GeometryReader { geometry in
             if #available(iOS 16.0, *) {
                 NavigationStack {
