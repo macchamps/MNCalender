@@ -7,7 +7,7 @@
 
 import Foundation
 
-class WeekStore: ObservableObject {
+public class WeekStore: ObservableObject {
     @Published var weeks: [Week] = []
     @Published var data: [Date] = []
     @Published var selectedDate: Date {

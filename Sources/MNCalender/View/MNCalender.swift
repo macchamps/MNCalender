@@ -10,7 +10,7 @@ import SwiftUI
 public struct MNCalender: View {
     public var onChangeDate: ((_ date: Date) -> Void)?
     
-    @EnvironmentObject var weekStore: WeekStore
+    @EnvironmentObject public var weekStore: WeekStore
     
     private var theme: ThemeColor = ThemeColor()
     private var isShowHeader:Bool = true
