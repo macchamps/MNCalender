@@ -1,6 +1,6 @@
 //
 //  Color+Extension.swift
-//  InfiniteWeekView
+//  MNCalender
 //
 //  Created by Monang Champaneri 
 //

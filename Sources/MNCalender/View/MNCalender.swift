@@ -1,13 +1,13 @@
 //
-//  InfiniteWeekView.swift
-//  InfiniteWeekView
+//  MNCalender.swift
+//  MNCalender
 //
 //  Created by Monang Champaneri 
 //
 
 import SwiftUI
 
-struct MNCalenderView: View {
+struct MNCalender: View {
     public var onChangeDate: ((_ date: Date) -> Void)?
     
     @EnvironmentObject var weekStore: WeekStore
@@ -51,13 +51,13 @@ struct MNCalenderView: View {
     }
 }
 
-struct ScrollWeekViewWrapperView_Previews: PreviewProvider {
+struct MNCalender_Previews: PreviewProvider {
     static var previews: some View {
-        MNCalenderView()
+        MNCalender()
             .environmentObject(WeekStore())
     }
 }
-extension MNCalenderView {
+extension MNCalender {
     public func onChangeDate( _ action: @escaping (_ date: Date) -> Void) -> Self {
         var copy = self
         copy.onChangeDate = action
