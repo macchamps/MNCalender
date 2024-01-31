@@ -7,7 +7,7 @@ let package = Package(
     name: "MNCalender",
     platforms: [
            // Only add support for iOS 11 and up.
-           .iOS(.v16)
+           .iOS(.v14)
        ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
