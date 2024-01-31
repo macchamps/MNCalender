@@ -36,7 +36,6 @@ struct WeekView: View {
                         }
                         Text(week.dates[i].toString(format: "d"))
                             .font(.system(size: 16))
-                            .monospaced()
                             .frame(maxWidth: .infinity)
                             .foregroundColor(week.dates[i] == week.referenceDate ? theme.selectedTextColor : theme.weekdayTextColor)
                     }

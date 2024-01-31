@@ -29,9 +29,19 @@ public struct ThemeColor {
     public var bgColor: Color {
         switch theme {
         case .light:
-            return Color(uiColor: .systemGroupedBackground)
+            if #available(iOS 15.0, *) {
+                return Color(uiColor: .systemGroupedBackground)
+            } else {
+                // Fallback on earlier versions
+                return Color(.black)
+            }
         case .dark:
-            return Color(uiColor: .darkGray)
+            if #available(iOS 15.0, *) {
+                return Color(uiColor: .darkGray)
+            } else {
+                // Fallback on earlier versions
+                return  Color(.darkGray)
+            }
         case .cyberpunk:
             return .black
         case .custom(bgColor: let color,dotColor: _, weekdayTextColor: _, weekendTextColor: _, todayTextColor: _, selectedTextColor: _ , selectedCircleColor: _, todaySelectedCircleColor: _, dateTextColor: _):
@@ -55,9 +65,17 @@ public struct ThemeColor {
     public var weekendTextColor: Color {
         switch theme {
         case .light:
-            return Color(uiColor: .lightGray)
+            if #available(iOS 15.0, *) {
+                return Color(uiColor: .lightGray)
+            } else {
+                return Color(.lightGray)
+            }
         case .dark:
-            return Color(uiColor: .lightGray)
+            if #available(iOS 15.0, *) {
+                return Color(uiColor: .lightGray)
+            } else {
+                return Color(.lightGray)
+            }
         case .cyberpunk:
             return .green.opacity(1.0)
         case .custom(bgColor: _,dotColor: _, weekdayTextColor: _, weekendTextColor: let color, todayTextColor: _, selectedTextColor: _ , selectedCircleColor: _, todaySelectedCircleColor: _, dateTextColor: _):

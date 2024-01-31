@@ -31,7 +31,7 @@ struct WeekHeaderView: View {
                     .fontWeight(.semibold)
                     .foregroundColor(.primary)
                     .padding(4)
-                    .background(.secondary)
+                    .background(ThemeColor().bgColor)
                     .cornerRadius(4)
             }
             Button {
@@ -43,15 +43,12 @@ struct WeekHeaderView: View {
             }
             .sheet(isPresented: $showDatePicker) {
                 VStack {
-                    DatePicker("Select Date", selection: $weekStore.selectedDate)
-                        .datePickerStyle(GraphicalDatePickerStyle())
-                        .cornerRadius(15)
-                        .shadow(color: .black, radius: 5)
-                        .padding()
-                        .presentationDetents([.height(400), .fraction(20), .medium, .large])
-                        .onChange(of: weekStore.selectedDate, perform: { _ in
+                    DatePicker("Select a Date", selection: $weekStore.selectedDate, in: ...Date(), displayedComponents: [.date])
+                          .datePickerStyle(GraphicalDatePickerStyle())
+                          .padding()
+                         .onChange(of: weekStore.selectedDate, perform: { _ in
                             showDatePicker = false
-                        })
+                         })
                 }
             }
         }
