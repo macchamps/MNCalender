@@ -10,8 +10,8 @@ import Foundation
 public class WeekStore: ObservableObject {
     
     @Published var weeks: [Week] = []
-    @Published var data: [Date] = []
-    @Published var selectedDate: Date = Date() {
+    @Published public var data: [Date] = []
+    @Published public  var selectedDate: Date = Date() {
         didSet {
             calcWeeks(with: selectedDate)
         }
