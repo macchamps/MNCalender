@@ -10,12 +10,13 @@ import SwiftUI
 public struct MNCalender: View {
     public var onChangeDate: ((_ date: Date) -> Void)?
     
-    @ObservedObject public var weekStore: WeekStore
+    @EnvironmentObject public var weekStore: WeekStore
     
     private var theme: ThemeColor = ThemeColor()
     private var isShowHeader:Bool = true
+    
     public init(){
-        weekStore = WeekStore(with: Date())
+        
     }
     public var body: some View {
         GeometryReader { geometry in

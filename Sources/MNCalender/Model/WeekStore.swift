@@ -8,15 +8,16 @@
 import Foundation
 
 public class WeekStore: ObservableObject {
+    
     @Published var weeks: [Week] = []
     @Published var data: [Date] = []
-    @Published var selectedDate: Date {
+    @Published var selectedDate: Date = Date() {
         didSet {
             calcWeeks(with: selectedDate)
         }
     }
 
-    init(with date: Date = Date()) {
+    public init(with date: Date = Date()) {
         self.selectedDate = Calendar.current.startOfDay(for: date)
         calcWeeks(with: selectedDate)
     }
