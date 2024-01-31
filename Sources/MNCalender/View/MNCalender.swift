@@ -25,29 +25,29 @@ public struct MNCalender: View {
                     ZStack {
                         VStack {
                             if isShowHeader {
-                                WeekHeaderView()
+                                WeekHeaderView().background(theme.bgColor)
                             }
                             WeeksTabView() { week in
                                 WeekView(theme:theme, week: week)
-                            }
+                            }.background(theme.bgColor)
                             .frame(height: 80, alignment: .center)
-                        }
-                    }
+                        }.background(theme.bgColor)
+                    }.background(theme.bgColor)
                 }
             } else {
                 NavigationView {
                     ZStack {
                         VStack {
                             if isShowHeader {
-                                WeekHeaderView()
+                                WeekHeaderView().background(theme.bgColor)
                             }
                             WeeksTabView() { week in
-                                WeekView(theme:theme, week: week)
-                            }
+                                WeekView(theme:theme, week: week).background(theme.bgColor)
+                            }.background(theme.bgColor)
                             .frame(height: 80, alignment: .center)
                         }
                     }
-                }
+                }.background(theme.bgColor)
                 // Fallback on earlier versions
             }
         }.background(theme.bgColor)
