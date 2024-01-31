@@ -23,7 +23,7 @@ struct WeekView: View {
                         .font(.system(size: 16))
                         .fontWeight(.semibold)
                         .frame(maxWidth:.infinity)
-                        .foregroundColor(theme.weekdayTextColor)
+                        .foregroundColor(week.dates[i] == week.referenceDate ? theme.selectedTextColor : theme.weekdayTextColor)
                     Spacer()
                         .frame(height: 4)
                     ZStack {
