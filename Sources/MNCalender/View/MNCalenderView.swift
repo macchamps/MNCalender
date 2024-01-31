@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MNCalenderView: View {
+public struct MNCalenderView: View {
     public var onChangeDate: ((_ date: Date) -> Void)?
     
     @EnvironmentObject var weekStore: WeekStore
