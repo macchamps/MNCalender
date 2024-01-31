@@ -51,6 +51,13 @@ public class WeekStore: ObservableObject {
     func select(date: Date) {
         selectedDate = Calendar.current.startOfDay(for: date)
     }
+    func nextMonth(){
+        selectedDate = Calendar.current.date(byAdding: .month, value: 1, to: selectedDate)!
+    }
+    func nextPrevious(){
+        selectedDate = Calendar.current.date(byAdding: .month, value: -1, to: selectedDate)!
+    }
+    
 
     func update(to direction: TimeDirection) {
         switch direction {

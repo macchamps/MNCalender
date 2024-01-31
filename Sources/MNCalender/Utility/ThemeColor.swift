@@ -14,6 +14,30 @@ public struct ThemeColor {
     public mutating func set(_ theme: Theme) {
         self.theme = theme
     }
+    public var calenderBg:Color{
+        switch theme {
+        case .light:
+            return .init(white: 0.8)
+        case .dark:
+            return .init(.lightGray)
+        case .cyberpunk:
+            return .green
+        case .custom(bgColor: _,let color,calenderIconText:_,dotColor: _, weekdayTextColor: _, weekendTextColor: _, todayTextColor: _, selectedTextColor: _, selectedCircleColor: _, todaySelectedCircleColor: _, dateTextColor: _):
+            return color
+        }
+    }
+    public var calenderIconText:Color{
+        switch theme {
+        case .light:
+            return .black
+        case .dark:
+            return .white
+        case .cyberpunk:
+            return .green
+        case .custom(bgColor: _,calenderBg: _,let color,dotColor: _, weekdayTextColor: _, weekendTextColor: _, todayTextColor: _, selectedTextColor: _, selectedCircleColor: _, todaySelectedCircleColor: _, dateTextColor: _):
+            return color
+        }
+    }
     public var dotColor: Color {
         switch theme {
         case .light:
@@ -22,7 +46,7 @@ public struct ThemeColor {
             return .white
         case .cyberpunk:
             return .green
-        case .custom(bgColor: _,dotColor: let color, weekdayTextColor: _, weekendTextColor: _, todayTextColor: _, selectedTextColor: _, selectedCircleColor: _, todaySelectedCircleColor: _, dateTextColor: _):
+        case .custom(bgColor: _,calenderBg: _,calenderIconText: _,dotColor: let color, weekdayTextColor: _, weekendTextColor: _, todayTextColor: _, selectedTextColor: _, selectedCircleColor: _, todaySelectedCircleColor: _, dateTextColor: _):
             return color
         }
     }
@@ -44,7 +68,7 @@ public struct ThemeColor {
             }
         case .cyberpunk:
             return .black
-        case .custom(bgColor: let color,dotColor: _, weekdayTextColor: _, weekendTextColor: _, todayTextColor: _, selectedTextColor: _ , selectedCircleColor: _, todaySelectedCircleColor: _, dateTextColor: _):
+        case .custom(bgColor: let color,calenderBg: _,calenderIconText: _,dotColor: _, weekdayTextColor: _, weekendTextColor: _, todayTextColor: _, selectedTextColor: _ , selectedCircleColor: _, todaySelectedCircleColor: _, dateTextColor: _):
             return color
         }
     }
@@ -57,7 +81,7 @@ public struct ThemeColor {
             return .white
         case .cyberpunk:
             return .green
-        case .custom(bgColor: _,dotColor: _, weekdayTextColor: let color, weekendTextColor: _, todayTextColor: _, selectedTextColor: _ , selectedCircleColor: _, todaySelectedCircleColor: _, dateTextColor: _):
+        case .custom(bgColor: _,calenderBg: _,calenderIconText: _,dotColor: _, weekdayTextColor: let color, weekendTextColor: _, todayTextColor: _, selectedTextColor: _ , selectedCircleColor: _, todaySelectedCircleColor: _, dateTextColor: _):
             return color
         }
     }
@@ -78,7 +102,7 @@ public struct ThemeColor {
             }
         case .cyberpunk:
             return .green.opacity(1.0)
-        case .custom(bgColor: _,dotColor: _, weekdayTextColor: _, weekendTextColor: let color, todayTextColor: _, selectedTextColor: _ , selectedCircleColor: _, todaySelectedCircleColor: _, dateTextColor: _):
+        case .custom(bgColor: _,calenderBg: _,calenderIconText: _,dotColor: _, weekdayTextColor: _, weekendTextColor: let color, todayTextColor: _, selectedTextColor: _ , selectedCircleColor: _, todaySelectedCircleColor: _, dateTextColor: _):
             return color
         }
     }
@@ -91,7 +115,7 @@ public struct ThemeColor {
             return .red
         case .cyberpunk:
             return .white
-        case .custom(bgColor: _,dotColor: _, weekdayTextColor: _, weekendTextColor: _, todayTextColor: let color, selectedTextColor: _ , selectedCircleColor: _, todaySelectedCircleColor: _, dateTextColor: _):
+        case .custom(bgColor: _,calenderBg: _,calenderIconText: _,dotColor: _, weekdayTextColor: _, weekendTextColor: _, todayTextColor: let color, selectedTextColor: _ , selectedCircleColor: _, todaySelectedCircleColor: _, dateTextColor: _):
             return color
         }
     }
@@ -104,7 +128,7 @@ public struct ThemeColor {
             return .black
         case .cyberpunk:
             return .green
-        case .custom(bgColor: _,dotColor: _, weekdayTextColor: _, weekendTextColor: _, todayTextColor: _, selectedTextColor: let color, selectedCircleColor: _, todaySelectedCircleColor: _, dateTextColor: _):
+        case .custom(bgColor: _,calenderBg: _,calenderIconText: _,dotColor: _, weekdayTextColor: _, weekendTextColor: _, todayTextColor: _, selectedTextColor: let color, selectedCircleColor: _, todaySelectedCircleColor: _, dateTextColor: _):
             return color
         }
     }
@@ -117,7 +141,7 @@ public struct ThemeColor {
             return .white
         case .cyberpunk:
             return .white
-        case .custom(bgColor: _,dotColor: _, weekdayTextColor: _, weekendTextColor: _, todayTextColor: _, selectedTextColor: _ , selectedCircleColor: let color, todaySelectedCircleColor: _, dateTextColor: _):
+        case .custom(bgColor: _,calenderBg: _,calenderIconText: _,dotColor: _, weekdayTextColor: _, weekendTextColor: _, todayTextColor: _, selectedTextColor: _ , selectedCircleColor: let color, todaySelectedCircleColor: _, dateTextColor: _):
             return color
         }
     }
@@ -130,7 +154,7 @@ public struct ThemeColor {
             return .red
         case .cyberpunk:
             return .white
-        case .custom(bgColor: _,dotColor: _, weekdayTextColor: _, weekendTextColor: _, todayTextColor: _, selectedTextColor: _ , selectedCircleColor: _, todaySelectedCircleColor: let color, dateTextColor: _):
+        case .custom(bgColor: _,calenderBg: _,calenderIconText: _,dotColor: _, weekdayTextColor: _, weekendTextColor: _, todayTextColor: _, selectedTextColor: _ , selectedCircleColor: _, todaySelectedCircleColor: let color, dateTextColor: _):
             return color
         }
     }
@@ -143,7 +167,7 @@ public struct ThemeColor {
             return .white
         case .cyberpunk:
             return .green
-        case .custom(bgColor: _,dotColor: _, weekdayTextColor: _, weekendTextColor: _, todayTextColor: _, selectedTextColor: _ , selectedCircleColor: _, todaySelectedCircleColor: _, dateTextColor: let color):
+        case .custom(bgColor: _,calenderBg: _,calenderIconText: _,dotColor: _, weekdayTextColor: _, weekendTextColor: _, todayTextColor: _, selectedTextColor: _ , selectedCircleColor: _, todaySelectedCircleColor: _, dateTextColor: let color):
             return color
         }
     }
@@ -153,6 +177,8 @@ public struct ThemeColor {
         case dark
         case cyberpunk
         case custom(bgColor: Color = .white,
+                    calenderBg: Color = .gray,
+                    calenderIconText: Color = .white,
                     dotColor: Color = .black,
                     weekdayTextColor: Color = .white,
                     weekendTextColor: Color = .white,
