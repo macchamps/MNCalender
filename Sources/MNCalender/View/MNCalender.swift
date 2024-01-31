@@ -50,7 +50,7 @@ public struct MNCalender: View {
                 }
                 // Fallback on earlier versions
             }
-        }
+        }.background(theme.bgColor)
     }
 }
 

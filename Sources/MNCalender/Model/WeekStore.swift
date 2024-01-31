@@ -11,7 +11,7 @@ public class WeekStore: ObservableObject {
     
     @Published var weeks: [Week] = []
     @Published public var data: [Date] = []
-    @Published public  var selectedDate: Date = Date() {
+    @Published public var selectedDate: Date = Date() {
         didSet {
             calcWeeks(with: selectedDate)
         }
