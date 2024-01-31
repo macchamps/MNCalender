@@ -14,7 +14,9 @@ public struct MNCalender: View {
     
     private var theme: ThemeColor = ThemeColor()
     private var isShowHeader:Bool = true
-    
+    public init(){
+
+    }
     public var body: some View {
         GeometryReader { geometry in
             if #available(iOS 16.0, *) {
@@ -51,13 +53,13 @@ public struct MNCalender: View {
     }
 }
 
-struct MNCalender_Previews: PreviewProvider {
-    static var previews: some View {
+public struct MNCalender_Previews: PreviewProvider {
+    public static var previews: some View {
         MNCalender()
             .environmentObject(WeekStore())
     }
 }
-extension MNCalender {
+public extension MNCalender {
     public func onChangeDate( _ action: @escaping (_ date: Date) -> Void) -> Self {
         var copy = self
         copy.onChangeDate = action
