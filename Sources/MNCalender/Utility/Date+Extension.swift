@@ -22,11 +22,11 @@ extension Date {
         return formatter.string(from: self)
     }
 
-    var yesterday: Date {
+    public var yesterday: Date {
         Calendar.current.date(byAdding: .day, value: -1, to: self)!
     }
 
-    var tomorrow: Date {
+    public var tomorrow: Date {
         Calendar.current.date(byAdding: .day, value: 1, to: self)!
     }
 
