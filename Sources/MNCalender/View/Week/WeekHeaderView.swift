@@ -54,7 +54,7 @@ struct WeekHeaderView: View {
             .cornerRadius(5, corners: .allCorners)
             .sheet(isPresented: $showDatePicker) {
                 VStack {
-                    DatePicker("Select a Date", selection: $weekStore.selectedDate, in: ...Date(), displayedComponents: [.date])
+                    DatePicker("Select a Date", selection: $weekStore.selectedDate, in: Date()..., displayedComponents: [.date])
                           .datePickerStyle(GraphicalDatePickerStyle())
                           .padding()
                          .onChange(of: weekStore.selectedDate, perform: { _ in

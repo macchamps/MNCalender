@@ -30,7 +30,7 @@ public struct MNCalender: View {
                             WeeksTabView() { week in
                                 WeekView(theme:theme, week: week)
                             }.background(theme.bgColor)
-                            .frame(height: 80, alignment: .center)
+                            .frame(height: 100, alignment: .center)
                         }.background(theme.bgColor)
                     }.background(theme.bgColor)
                 }
@@ -44,7 +44,7 @@ public struct MNCalender: View {
                             WeeksTabView() { week in
                                 WeekView(theme:theme, week: week).background(theme.bgColor)
                             }.background(theme.bgColor)
-                            .frame(height: 80, alignment: .center)
+                            .frame(height: 100, alignment: .center)
                         }
                     }
                 }.background(theme.bgColor)
@@ -58,6 +58,7 @@ public struct MNCalender_Previews: PreviewProvider {
     public static var previews: some View {
         MNCalender()
             .environmentObject(WeekStore())
+            
     }
 }
 public extension MNCalender {

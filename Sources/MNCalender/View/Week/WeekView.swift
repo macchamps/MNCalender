@@ -19,13 +19,13 @@ struct WeekView: View {
                 VStack {
                     Spacer()
                         .frame(minHeight: 5)
-                    Text(week.dates[i].toString(format: "EEE").uppercased())
+                    Text(week.dates[i].toString(format: "EEE"))
                         .font(.system(size: 16))
                         .fontWeight(.semibold)
                         .frame(maxWidth:.infinity)
                         .foregroundColor(week.dates[i] == week.referenceDate ? theme.selectedTextColor : theme.weekdayTextColor)
                     Spacer()
-                        .frame(height: 4)
+                        .frame(height: 10)
                     ZStack {
                         HStack{
                             Spacer()
@@ -44,7 +44,7 @@ struct WeekView: View {
 
                 }.background(week.dates[i] == week.referenceDate ? theme.selectedCircleColor : .clear)
                 .frame(maxWidth: .infinity,maxHeight:.infinity)
-                .cornerRadius(20, corners: [.bottomRight, .bottomLeft, .topLeft, .topRight])
+                .cornerRadius(10, corners: [.bottomRight, .bottomLeft, .topLeft, .topRight])
                 .onTapGesture {
                     withAnimation {
                         weekStore.selectedDate = week.dates[i]
@@ -55,7 +55,7 @@ struct WeekView: View {
             }
         }.background(Color.clear)
         .frame(maxHeight:.infinity)
-        .padding(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+        .padding(.init(top: 10, leading: 5, bottom: 10, trailing: 5))
     }
 }
 
